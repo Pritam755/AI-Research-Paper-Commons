@@ -1,0 +1,6 @@
+{
+  "name": "AI Research Paper Commons",
+  "description": "A copyright-free open access platform to read and download AI research papers as PDFs with zero login requirements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

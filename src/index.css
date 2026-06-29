@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "EB Garamond", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.5);
+}
+
+/* Academic Double Column Layout support */
+.academic-columns {
+  column-count: 2;
+  column-gap: 2.5rem;
+  column-rule: 1px solid rgba(229, 231, 235, 0.5);
+}
+
+@media (max-width: 1024px) {
+  .academic-columns {
+    column-count: 1;
+  }
+}
+
+/* Print CSS overrides */
+@media print {
+  /* Hide all UI elements */
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Hide everything except the print-only container */
+  .no-print, header, footer, nav, aside, button {
+    display: none !important;
+  }
+
+  /* Make the print container visible and force page breaks */
+  #academic-paper-print-container {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 2cm !important;
+    box-shadow: none !important;
+    background: white !important;
+    color: black !important;
+    font-family: "Lora", Georgia, serif !important;
+  }
+
+  .print-break-inside-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .print-break-after-always {
+    break-after: page;
+    page-break-after: always;
+  }
+
+  /* Force standard black ink for text */
+  h1, h2, h3, h4, p, span, li, table, td, th {
+    color: #000000 !important;
+  }
+
+  a {
+    text-decoration: underline !important;
+    color: #000000 !important;
+  }
+  
+  /* Retain double columns in print if selected */
+  .print-academic-columns {
+    column-count: 2 !important;
+    column-gap: 2rem !important;
+    column-rule: 1px solid #ccc !important;
+  }
+}
